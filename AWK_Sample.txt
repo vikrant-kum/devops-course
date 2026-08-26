@@ -1,9 +1,0 @@
-ID,Name,Department,City,Salary,Experience
-101,Rahul,DevOps,Delhi,85000,4
-102,Amit,Developer,Pune,75000,3
-103,Neha,DevOps,Bangalore,95000,5
-104,Priya,Tester,Mumbai,65000,2
-105,Rohit,DevOps,Delhi,110000,7
-106,Anjali,Developer,Chennai,90000,6
-107,Karan,Tester,Pune,70000,3
-108,Simran,DevOps,Mumbai,120000,8
