@@ -1,0 +1,82 @@
+Use the employee.csv file to solve all questions.
+
+
+Q1. Extract Employee Names
+--------------------------
+How would you extract only the employee names from the employee.csv file using AWK?
+
+
+Q2. Display Employee Name and Department
+----------------------------------------
+How would you display the employee name and department for every employee using AWK?
+
+
+Q3. Find DevOps Employees
+-------------------------
+How would you find all employees who belong to the DevOps department
+and display their name and city?
+
+
+Q4. Find Employees with Salary Greater Than 90000
+-------------------------------------------------
+How would you find employees whose salary is greater than 90000
+and display their name and salary?
+
+
+Q5. Find DevOps Employees in Delhi
+----------------------------------
+How would you find DevOps employees who are based in Delhi
+and display their name and salary?
+
+
+Q6. Find Experienced Employees
+------------------------------
+How would you find employees who have 5 or more years of experience?
+Display their name and experience.
+
+
+Q7. Skip the CSV Header
+-----------------------
+How would you skip the header row of the CSV file and display only
+the employee name and department?
+
+
+Q8. Display Record Number
+-------------------------
+How would you display the record number along with each employee's name
+while excluding the header from the record count?
+
+Expected format:
+
+1 Rahul
+2 Amit
+3 Neha
+
+
+Q9. Identify Invalid Records
+----------------------------
+Each employee record should contain exactly 6 fields.
+
+How would you identify records that do not contain exactly 6 fields
+using AWK?
+
+Display:
+
+- Record Number
+- Number of Fields
+
+
+Q10. Combined AWK Challenge
+---------------------------
+How would you find employees who satisfy all of the following conditions?
+
+- Department is DevOps
+- City is either Delhi or Mumbai
+- Experience is 5 or more years
+
+Display:
+
+- Name
+- City
+- Salary
+- Experience
