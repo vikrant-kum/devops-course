@@ -1,0 +1,113 @@
+LINUX USER MANAGEMENT — INTERVIEW PRACTICE
+==============================================
+
+Practice Users:
+u1
+u2
+u3
+
+Practice Groups:
+g1
+g2
+g3
+
+
+Q1. Create a User
+-----------------
+How would you create a new user named u1 with a home directory?
+
+
+Q2. Check User Information
+---------------------------
+How would you check the UID, primary GID, and group memberships of user u1?
+
+
+Q3. Set and Check Password
+--------------------------
+How would you set a password for u1 and check the password status?
+
+
+Q4. Create a Group
+------------------
+How would you create a group named g1 and verify that the group was created successfully?
+
+
+Q5. Add User to a Group
+-----------------------
+How would you add user u1 to the g1 group without removing any existing
+supplementary group memberships?
+
+
+Q6. Add User to Multiple Groups
+------------------------------
+How would you add u1 to both g2 and g3 and verify the group memberships?
+
+
+Q7. Change Primary Group
+------------------------
+How would you change the primary group of u1 to g1 and verify the change?
+
+
+Q8. Lock and Unlock a User
+--------------------------
+How would you lock the password of u1, check its status, and then unlock it?
+
+
+Q9. User and Group Access
+-------------------------
+Create users u1 and u2 and make both users members of g1.
+
+Create a file owned by u1 with g1 as its group.
+
+How would you give u2 read and write access to the file while preventing
+users outside g1 from accessing it?
+
+
+Q10. Scenario-Based — Project Directory Access
+----------------------------------------------
+Users:
+u1
+u2
+u3
+
+Group:
+g1
+
+Requirements:
+
+- u1 and u2 should be members of g1.
+- u3 should not be a member of g1.
+- Create a directory /opt/project.
+- The directory should be owned by u1 and group-owned by g1.
+- u1 and u2 should be able to enter the directory, list its contents,
+  and create files.
+- u3 should not be able to access the directory.
+
+How would you configure the ownership and permissions to achieve this?
+
+
+Q11. Scenario-Based — User Onboarding
+-------------------------------------
+A new DevOps engineer joins the project.
+
+User:
+u1
+
+Groups:
+g1 = developers
+g2 = devops
+g3 = docker
+
+Requirements:
+
+- Create user u1 with a home directory.
+- Set a password for u1.
+- Add u1 to developers, devops, and docker.
+- Make developers the primary group.
+- Verify the UID, primary GID, supplementary groups, and password status.
+- Create /opt/project/app.sh.
+- Make u1 the owner and developers the group owner.
+- Give the owner and group read/write access.
+- Do not give any access to others.
+
+How would you perform all these steps using Linux commands?
