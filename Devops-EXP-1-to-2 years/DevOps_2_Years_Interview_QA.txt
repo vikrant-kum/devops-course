@@ -1,0 +1,851 @@
+DEVOPS ENGINEER – 2 YEARS EXPERIENCE
+
+
+============================================================
+AREA 1 — GIT & GITHUB
+============================================================
+
+1. What is Git?
+
+Answer:
+Git is a version control tool. I use Git to manage code changes and keep track of different versions of the code.
+
+2. What is GitHub?
+
+Answer:
+GitHub is a platform where we store Git repositories remotely. We use it for code sharing, pull requests, collaboration and backup.
+
+3. What is the difference between Git and GitHub?
+
+Answer:
+Git is a tool installed on our system to manage code versions. GitHub is a remote platform where we store and collaborate on Git repositories.
+
+4. What is a Git repository?
+
+Answer:
+A repository is a place where our project code and its Git history are stored. It contains files, commits and branches.
+
+5. What is a branch in Git?
+
+Answer:
+A branch is basically a separate line of development. We normally create a branch for a new feature or bug fix without directly changing the main branch.
+
+Example:
+git branch feature-login
+
+6. How do you create and switch to a branch?
+
+Answer:
+I can create and switch to a branch using git checkout -b.
+
+Example:
+git checkout -b feature-login
+
+Or:
+git switch -c feature-login
+
+7. What is git checkout?
+
+Answer:
+git checkout is used to switch between branches. It can also be used to restore files in some cases.
+
+Example:
+git checkout main
+
+This switches me to the main branch.
+
+8. What is the difference between git pull and git fetch?
+
+Answer:
+git fetch only downloads the latest changes from the remote repository. It does not change my current branch.
+
+git pull downloads the changes and also updates my current branch.
+
+Simple way:
+fetch = download changes
+pull = download + update
+
+9. What is a merge conflict?
+
+Answer:
+A merge conflict happens when two branches have changes in the same part of a file. Git cannot decide which change to keep, so I manually resolve the conflict and then commit the changes.
+
+Basic flow:
+git pull
+resolve conflict
+git add .
+git commit
+
+10. How do you delete a Git branch?
+
+Answer:
+If the branch is already merged, I can delete the local branch using:
+
+git branch -d feature-login
+
+For force delete:
+
+git branch -D feature-login
+
+For a remote branch:
+
+git push origin --delete feature-login
+
+
+============================================================
+AREA 2 — JENKINS
+============================================================
+
+1. What is Jenkins?
+
+Answer:
+Jenkins is a CI/CD automation tool. I use it to automate build, test and deployment activities.
+
+2. What is CI/CD?
+
+Answer:
+CI means Continuous Integration, where we regularly build and test code changes. CD means Continuous Delivery or Deployment, where we automate the release of the application.
+
+3. How do you create a Jenkins pipeline?
+
+Answer:
+First I connect Jenkins with the Git repository. Then I create a pipeline and define stages like checkout, build, test and deployment. Usually I keep the pipeline code in a Jenkinsfile.
+
+4. What is a Jenkinsfile?
+
+Answer:
+A Jenkinsfile contains the pipeline configuration as code. It defines the stages and steps Jenkins needs to execute.
+
+5. How do you connect Jenkins with GitHub?
+
+Answer:
+I configure the GitHub repository in Jenkins and add the required credentials. For automatic triggering, I can configure a GitHub webhook.
+
+6. What is a Jenkins webhook?
+
+Answer:
+A webhook sends an event from GitHub to Jenkins when something happens, like a code push. Jenkins can then automatically start the pipeline.
+
+7. How do you store passwords or secrets in Jenkins?
+
+Answer:
+I don't keep passwords directly in the Jenkinsfile. I store them in Jenkins Credentials and access them securely from the pipeline.
+
+8. What will you check if a Jenkins build fails?
+
+Answer:
+First I check the console output. I look for the exact error, then check the source code, dependencies, credentials or environment. After fixing the issue, I run the build again.
+
+9. What is a Jenkins agent?
+
+Answer:
+A Jenkins agent is a machine where Jenkins runs the actual build or deployment jobs. It helps us distribute the workload.
+
+10. What are common stages in a CI/CD pipeline?
+
+Answer:
+A common pipeline has checkout, build, test, Docker build, push and deployment stages. The exact stages depend on the application.
+
+
+============================================================
+AREA 3 — GITHUB ACTIONS
+============================================================
+
+1. What is GitHub Actions?
+
+Answer:
+GitHub Actions is a CI/CD automation service provided by GitHub. I can use it to build, test and deploy applications directly from a GitHub repository.
+
+2. What is a workflow in GitHub Actions?
+
+Answer:
+A workflow is a YAML file that defines the automation process. It tells GitHub what to run and when to run it.
+
+3. What is a runner?
+
+Answer:
+A runner is the machine where GitHub Actions executes the workflow jobs. It can be a GitHub-hosted runner or a self-hosted runner.
+
+4. How do you trigger a GitHub Actions workflow?
+
+Answer:
+We can trigger it on events like push, pull request or manually. For example, we can run a workflow whenever code is pushed to the main branch.
+
+5. What is the use of jobs in GitHub Actions?
+
+Answer:
+Jobs contain the actual work of the workflow. For example, one job can build the application and another job can deploy it.
+
+6. What are steps in GitHub Actions?
+
+Answer:
+Steps are individual tasks inside a job. For example, checkout code, install dependencies, run tests and build the application.
+
+7. How do you store secrets in GitHub Actions?
+
+Answer:
+I store sensitive values in GitHub Secrets and access them through the workflow. I don't hardcode passwords or access keys in the YAML file.
+
+8. Jenkins vs GitHub Actions?
+
+Answer:
+Jenkins is a separate CI/CD server that we manage. GitHub Actions is integrated with GitHub, so setup and repository integration are usually simpler.
+
+9. What is actions/checkout?
+
+Answer:
+actions/checkout is a commonly used GitHub Action that checks out the repository code so the workflow can work with it.
+
+10. Can GitHub Actions deploy to AWS?
+
+Answer:
+Yes. We can use AWS credentials or preferably an appropriate AWS identity mechanism and then run AWS CLI or deployment actions from the workflow.
+
+
+============================================================
+AREA 4 — DOCKER
+============================================================
+
+1. What is Docker?
+
+Answer:
+Docker is a containerization platform. It packages the application and its dependencies into a container so it can run consistently in different environments.
+
+2. What is the difference between an image and a container?
+
+Answer:
+An image is a template or package used to create a container. A container is the running instance of that image.
+
+3. What is a Dockerfile?
+
+Answer:
+A Dockerfile is a text file containing instructions to build a Docker image. It defines things like the base image, application files, dependencies and startup command.
+
+4. How do you build a Docker image?
+
+Answer:
+I use the docker build command.
+
+Example:
+docker build -t myapp:1.0 .
+
+5. How do you run a Docker container?
+
+Answer:
+I use docker run.
+
+Example:
+docker run -d -p 8080:8080 myapp:1.0
+
+6. How do you check running containers?
+
+Answer:
+I use docker ps.
+
+For all containers, including stopped ones:
+docker ps -a
+
+7. Container is running but application is not accessible. What will you check?
+
+Answer:
+First I check the container logs and port mapping. Then I check whether the application is listening on the correct port and whether the firewall or security group is allowing the traffic.
+
+8. How do you check Docker container logs?
+
+Answer:
+I use:
+
+docker logs <container-name>
+
+This helps me find application or startup errors.
+
+9. What is a Docker volume?
+
+Answer:
+A Docker volume is used for persistent data. The data can remain even when the container is removed.
+
+10. How do you reduce Docker image size?
+
+Answer:
+I use a smaller base image, remove unnecessary packages and use multi-stage builds when required. I also avoid putting unnecessary files into the image.
+
+
+============================================================
+AREA 5 — KUBERNETES
+============================================================
+
+1. What is Kubernetes?
+
+Answer:
+Kubernetes is a container orchestration platform. I use it to deploy, manage, scale and monitor containerized applications.
+
+2. What is a Pod?
+
+Answer:
+A Pod is the smallest deployable unit in Kubernetes. It normally contains one application container, but it can contain more than one container when required.
+
+3. What is a Deployment?
+
+Answer:
+A Deployment manages application Pods. It helps us maintain the required number of replicas and also supports rolling updates and rollback.
+
+4. What is a Kubernetes Service?
+
+Answer:
+A Service provides a stable way to access Pods. Since Pod IPs can change, the Service gives us a stable endpoint.
+
+5. What is ConfigMap?
+
+Answer:
+ConfigMap is used to store non-sensitive configuration values separately from the application image.
+
+6. What is a Kubernetes Secret?
+
+Answer:
+A Secret is used to store sensitive values such as passwords, tokens or keys. We should still follow proper access control and secret-management practices.
+
+7. Pod is in CrashLoopBackOff. What will you check?
+
+Answer:
+First I check the Pod status and describe output. Then I check the current and previous container logs.
+
+Commands:
+kubectl get pods
+kubectl describe pod <pod>
+kubectl logs <pod>
+kubectl logs <pod> --previous
+
+8. Pod is Running but application is not accessible. What will you check?
+
+Answer:
+I check the Pod, Service, Service selector, targetPort and containerPort. If there is an Ingress or Load Balancer, I check that also.
+
+9. How do you scale a Kubernetes application?
+
+Answer:
+I can increase the number of replicas.
+
+Example:
+kubectl scale deployment myapp --replicas=3
+
+10. How do you rollback a Kubernetes deployment?
+
+Answer:
+I use the rollout undo command.
+
+Example:
+kubectl rollout undo deployment/myapp
+
+First I normally check the rollout history and the reason for the rollback.
+
+
+============================================================
+AREA 6 — AWS
+============================================================
+
+1. What AWS services have you worked with?
+
+Answer:
+I have mainly worked with services like EC2, S3, IAM, VPC, Security Groups, Route 53 and CloudWatch. My work is mostly around deployment, access, storage and monitoring.
+
+2. What is EC2?
+
+Answer:
+EC2 is a virtual server in AWS. We can use it to run applications, web servers and other workloads.
+
+3. What is a Security Group?
+
+Answer:
+A Security Group works like a virtual firewall for AWS resources such as EC2. It controls allowed inbound and outbound traffic.
+
+4. What is S3?
+
+Answer:
+S3 is an object storage service. We use it to store files, backups, logs, artifacts and other objects.
+
+5. What is IAM?
+
+Answer:
+IAM is used to manage access to AWS resources. We use users, roles and policies to control permissions.
+
+6. What is an IAM Role?
+
+Answer:
+An IAM Role provides temporary permissions to an AWS service or trusted entity. For example, an EC2 instance can use a role to access S3 without storing access keys on the server.
+
+7. EC2 server is not accessible through SSH. What will you check?
+
+Answer:
+I check whether the instance is running, the Security Group allows port 22, the correct key is being used and the network and route configuration are correct. I also check the username and instance status.
+
+8. How do you upload a file to S3 using CLI?
+
+Answer:
+I can use the AWS CLI.
+
+Example:
+aws s3 cp file.txt s3://my-bucket/
+
+9. What is CloudWatch?
+
+Answer:
+CloudWatch is an AWS monitoring service. We use it for metrics, logs and alarms. For example, we can monitor EC2 CPU utilization.
+
+10. How do you secure an S3 bucket?
+
+Answer:
+I keep public access disabled unless there is a real requirement. I use proper IAM or bucket policies, enable encryption and control access using least privilege.
+
+
+============================================================
+AREA 7 — LINUX
+============================================================
+
+1. How do you check disk usage?
+
+Answer:
+I use df -h to check filesystem usage.
+
+Example:
+df -h
+
+I use du -sh to find which directories are using more space.
+
+2. How do you check memory usage?
+
+Answer:
+I use free -m. I can also use top to see CPU and memory usage by processes.
+
+3. How do you check running processes?
+
+Answer:
+I use ps, top or htop.
+
+Example:
+ps aux
+top
+
+4. How do you check whether a service is running?
+
+Answer:
+On a system using systemd, I use:
+
+systemctl status <service>
+
+5. How do you check application logs?
+
+Answer:
+I can use tail, grep or journalctl depending on where the application logs are stored.
+
+Examples:
+tail -f app.log
+journalctl -u nginx
+
+6. How do you find a file in Linux?
+
+Answer:
+I use the find command.
+
+Example:
+find /var/log -name "*.log"
+
+7. How do you search text inside a file?
+
+Answer:
+I use grep.
+
+Example:
+grep "ERROR" app.log
+
+8. Server CPU is very high. What will you do?
+
+Answer:
+First I check which process is consuming CPU using top or ps. Then I check application logs and recent changes. Based on the issue, I take the required action.
+
+9. What is chmod?
+
+Answer:
+chmod is used to change file or directory permissions.
+
+Example:
+chmod 755 script.sh
+
+10. What is the difference between a process and a service?
+
+Answer:
+A process is a running program. A service is usually a long-running application managed by the operating system, often through systemd.
+
+
+============================================================
+AREA 8 — BASH / SHELL SCRIPTING
+============================================================
+
+1. Why do we use Bash scripting in DevOps?
+
+Answer:
+We use Bash scripting to automate repetitive tasks like monitoring, backups, deployments and system checks.
+
+2. How do you define a variable in Bash?
+
+Answer:
+I define a variable using the variable name and value without spaces.
+
+Example:
+name="vikrant"
+
+3. How do you use an if condition?
+
+Answer:
+I use if to check a condition and perform an action based on the result.
+
+Example:
+if [ "$a" -gt 10 ]; then
+    echo "High"
+fi
+
+4. What is a loop?
+
+Answer:
+A loop is used when we need to run the same task multiple times. In Bash, we commonly use for and while loops.
+
+5. How do you pass an argument to a script?
+
+Answer:
+We can use positional arguments like $1, $2 and so on.
+
+Example:
+./test.sh server1
+
+Here server1 is available as $1.
+
+6. How do you check the exit status of a command?
+
+Answer:
+I use $?.
+
+Example:
+echo $?
+
+Zero usually means success, and a non-zero value normally means failure.
+
+7. How would you write a disk monitoring script?
+
+Answer:
+I would get the disk usage, compare it with a threshold like 80 percent and print an alert if the usage is above the threshold.
+
+8. How do you make a script executable?
+
+Answer:
+I use chmod.
+
+Example:
+chmod +x script.sh
+
+Then I can run:
+./script.sh
+
+9. What is grep used for?
+
+Answer:
+grep is used to search for text or patterns in files or command output.
+
+Example:
+grep "ERROR" app.log
+
+10. What is the use of awk?
+
+Answer:
+awk is useful for processing and extracting columns from text. I commonly use it when working with command output or logs.
+
+
+============================================================
+AREA 9 — TERRAFORM
+============================================================
+
+1. What is Terraform?
+
+Answer:
+Terraform is an Infrastructure as Code tool. We use it to create and manage infrastructure using configuration files.
+
+2. What is Infrastructure as Code?
+
+Answer:
+Infrastructure as Code means managing infrastructure through code instead of creating everything manually.
+
+3. What is terraform init?
+
+Answer:
+terraform init initializes the Terraform working directory. It downloads required providers and prepares the backend.
+
+4. What is terraform plan?
+
+Answer:
+terraform plan shows what changes Terraform is going to make. It helps me review the changes before applying them.
+
+5. What is terraform apply?
+
+Answer:
+terraform apply actually creates or updates the infrastructure based on the Terraform configuration.
+
+6. What is Terraform state?
+
+Answer:
+Terraform state keeps information about the infrastructure Terraform is managing. Terraform uses it to understand the current state and calculate changes.
+
+7. What is a Terraform provider?
+
+Answer:
+A provider allows Terraform to communicate with a platform or service. For example, the AWS provider allows Terraform to manage AWS resources.
+
+8. What are Terraform variables?
+
+Answer:
+Variables help us make Terraform configurations reusable and avoid hardcoding values.
+
+Example:
+variable "region" {
+  type = string
+}
+
+9. What is a Terraform module?
+
+Answer:
+A module is a reusable group of Terraform configuration files. It helps us organize and reuse infrastructure code.
+
+10. What is terraform destroy?
+
+Answer:
+terraform destroy removes the infrastructure managed by the Terraform configuration. I use it carefully, especially in shared or production environments.
+
+
+============================================================
+AREA 10 — NETWORKING & DNS
+============================================================
+
+1. What is DNS?
+
+Answer:
+DNS converts a domain name into an IP address or another DNS record. It helps users access applications using names instead of IP addresses.
+
+2. What is an A record?
+
+Answer:
+An A record maps a domain name to an IPv4 address.
+
+Example:
+example.com -> 10.10.10.10
+
+3. What is a CNAME record?
+
+Answer:
+A CNAME maps one domain name to another domain name. It does not directly map to an IP address.
+
+4. What is a port?
+
+Answer:
+A port identifies a network service on a system. For example, HTTP commonly uses port 80 and HTTPS uses port 443.
+
+5. What is the difference between HTTP and HTTPS?
+
+Answer:
+HTTPS is the secure version of HTTP. It uses TLS to encrypt communication between the client and server.
+
+6. How do you check if a port is listening?
+
+Answer:
+I can use ss.
+
+Example:
+ss -tulnp
+
+7. How do you test whether an application endpoint is working?
+
+Answer:
+I can use curl.
+
+Example:
+curl -I http://example.com
+
+8. What will you check if a domain is not opening?
+
+Answer:
+First I check DNS resolution using nslookup or dig. Then I check the server IP, port, firewall, Security Group and application status.
+
+9. What is TTL in DNS?
+
+Answer:
+TTL means Time To Live. It tells DNS resolvers how long they can cache a DNS record before checking it again.
+
+10. What is the difference between private and public IP?
+
+Answer:
+A public IP can be reached over the internet when network rules allow it. A private IP is used inside a private network and is normally not directly reachable from the public internet.
+
+
+============================================================
+AREA 11 — MONITORING & TROUBLESHOOTING
+============================================================
+
+1. What is monitoring?
+
+Answer:
+Monitoring means continuously checking the health and performance of systems and applications. It helps us identify issues early.
+
+2. What things do you monitor on a server?
+
+Answer:
+I normally monitor CPU, memory, disk, network, processes, application health and logs.
+
+3. What is CloudWatch used for?
+
+Answer:
+CloudWatch is used to monitor AWS resources and applications. We can use metrics, logs and alarms.
+
+4. Production application is slow. What will you check?
+
+Answer:
+I start with CPU, memory, disk and network. Then I check application logs, database connectivity and recent deployments or configuration changes.
+
+5. Server disk is 100 percent full. What will you do?
+
+Answer:
+First I confirm the disk usage with df -h. Then I find large directories using du. I check logs and other files, and clean or rotate data safely based on the requirement.
+
+6. A service is down. What will you check?
+
+Answer:
+I check the service status, application logs, system resources and recent changes. If it is safe, I restart the service and continue checking the root cause.
+
+7. Kubernetes Pod is failing. What will you check?
+
+Answer:
+I check the Pod status, describe output and logs. I also check events, configuration, image, resources and dependencies.
+
+8. Deployment is failing. What will you do?
+
+Answer:
+I check the CI/CD pipeline logs first. Then I check the build, image, configuration, credentials and target environment. I fix the actual error and retry the deployment.
+
+9. How do you troubleshoot a website that is not opening?
+
+Answer:
+I check DNS first, then network connectivity, port, firewall or Security Group, server status and application logs. This helps me narrow down where the problem is.
+
+10. Why are logs important?
+
+Answer:
+Logs help us understand what happened in the application or system. During troubleshooting, they are one of the first places I check for errors.
+
+
+============================================================
+AREA 12 — SECURITY
+============================================================
+
+1. What is least privilege?
+
+Answer:
+Least privilege means giving only the permissions that are actually required to perform a task.
+
+2. Why should we not store AWS keys in GitHub?
+
+Answer:
+Because anyone who gets access to the repository may get those credentials. It can lead to unauthorized access. I use secrets or IAM roles instead.
+
+3. How do you manage secrets in CI/CD?
+
+Answer:
+I store secrets in the CI/CD platform's secure secret or credential store. I don't hardcode them in the source code or pipeline files.
+
+4. What is an AWS Security Group?
+
+Answer:
+A Security Group is a virtual firewall attached to resources like EC2. It controls network traffic based on rules.
+
+5. What is IAM?
+
+Answer:
+IAM is AWS Identity and Access Management. It controls who can access AWS resources and what actions they can perform.
+
+6. What is an IAM Role?
+
+Answer:
+An IAM Role provides permissions without requiring us to store long-term access keys on the resource. For example, EC2 can use a role to access S3.
+
+7. How do you secure an EC2 server?
+
+Answer:
+I allow only required ports, use SSH keys, keep the operating system updated and follow least privilege. I also monitor the server and avoid unnecessary public exposure.
+
+8. How do you secure an S3 bucket?
+
+Answer:
+I disable public access unless required, use proper IAM and bucket policies, enable encryption and follow least privilege.
+
+9. Why is HTTPS important?
+
+Answer:
+HTTPS encrypts data between the client and server. It helps protect sensitive information from being read during transmission.
+
+10. What is a secret?
+
+Answer:
+A secret is sensitive information such as a password, API key, token or database credential. It should be stored securely and should not be committed to Git.
+
+
+============================================================
+AREA 13 — DIGITALOCEAN
+============================================================
+
+1. What is DigitalOcean?
+
+Answer:
+DigitalOcean is a cloud platform that provides services like virtual machines, networking, storage and databases. Its virtual machines are commonly called Droplets.
+
+2. What is a Droplet?
+
+Answer:
+A Droplet is a virtual machine in DigitalOcean. We can use it to host applications and services.
+
+3. How do you connect to a DigitalOcean Droplet?
+
+Answer:
+Normally I connect using SSH with the server IP and the appropriate SSH key.
+
+Example:
+ssh user@server-ip
+
+4. How do you secure a DigitalOcean server?
+
+Answer:
+I allow only required ports, use SSH keys, keep the server updated and configure the firewall properly.
+
+5. What is DigitalOcean Firewall?
+
+Answer:
+It controls inbound and outbound network traffic for DigitalOcean resources. We can allow only the ports that are required.
+
+6. How do you deploy an application on a Droplet?
+
+Answer:
+I connect to the Droplet, install the required dependencies, copy or clone the application, configure it and start the service. I can also use Docker for deployment.
+
+7. Can Docker run on DigitalOcean?
+
+Answer:
+Yes. We can install Docker on a Droplet and run containerized applications there.
+
+8. How do you configure DNS in DigitalOcean?
+
+Answer:
+We add the required DNS records, such as A or CNAME, and point them to the required server or hostname.
+
+9. What is a DigitalOcean snapshot?
+
+Answer:
+A snapshot is a point-in-time copy of a Droplet or volume. It can be useful for backup or creating another environment.
+
+10. AWS EC2 vs DigitalOcean Droplet?
+
+Answer:
+Both provide virtual machines. AWS provides a much larger set of cloud services, while DigitalOcean is generally simpler and easier to start with for basic infrastructure.
+
