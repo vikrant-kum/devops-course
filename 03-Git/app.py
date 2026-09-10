@@ -1,0 +1,1 @@
+Git remote connect check
